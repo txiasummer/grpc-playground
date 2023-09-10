@@ -1,0 +1,12 @@
+.DS_Store
+*coverage.out
+bin/
+.idea
+*.iml
+tilt_option.json
+terraform/.terraform
+terraform/terraform.out
+tilt_modules
+vendor
+.VSCodeCounter/*
+*.log
