@@ -16,8 +16,10 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to connect: %v\n", err)
 	}
-	defer conn.Close()
 
+	defer conn.Close()
 	c := pb.NewCalculatorServiceClient(conn)
+
 	doSum(c)
+	doPrimes(c)
 }
