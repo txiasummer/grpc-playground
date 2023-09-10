@@ -1,11 +1,14 @@
 syntax = "proto3";
 
-import "sum.proto";
-
 package calculator;
 
 option go_package = "grpc-playground/calculator/proto";
 
-service CalculatorService {
-  rpc Sum(SumRequest) returns (SumResponse);
+message SumRequest {
+  int32 X = 1;
+  int32 Y = 2;
+}
+
+message SumResponse {
+  int32 result = 1;
 }

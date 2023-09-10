@@ -1,6 +1,7 @@
 package main
 
 import (
+	"google.golang.org/grpc/reflection"
 	"log"
 	"net"
 
@@ -21,8 +22,12 @@ func main() {
 		log.Fatalf("Failed to listen on: %v\n", err)
 	}
 	log.Printf("Listening on %s\n", addr)
-	s := grpc.NewServer()
+
+	var opts []grpc.ServerOption
+	s := grpc.NewServer(opts...)
 	pb.RegisterCalculatorServiceServer(s, &Server{})
+	reflection.Register(s)
+
 	if err = s.Serve(listener); err != nil {
 		log.Fatalf("Failed to serve: %v\n", err)
 	}
