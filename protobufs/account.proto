@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+enum EyeColor {
+  EYE_COLOR_UNSPECIFIED = 0;
+  EYE_COLOR_HAZEL = 1;
+  EYE_COLOR_BLUE = 2;
+  EYE_COLOR_GREEN = 3;
+  EYE_COLOR_BROWN = 4;
+  EYE_COLOR_BLACK = 5;
+}
+
+/* Account is used to identify a user in the system. */
+message Account {
+  uint32 id = 1;
+  string name = 2;
+  bytes thumbnail = 3; // picture in .jpeg format
+  bool is_verified = 4;
+  float height = 5; // height in centimeters
+
+  repeated string phones = 6;
+
+  EyeColor eye_color = 7;
+}
