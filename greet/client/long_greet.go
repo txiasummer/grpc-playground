@@ -2,9 +2,10 @@ package main
 
 import (
 	"context"
-	pb "grpc-playground/greet/proto"
 	"log"
 	"time"
+
+	pb "grpc-playground/greet/proto"
 )
 
 func doLongGreet(c pb.GreetServiceClient) {

@@ -22,4 +22,5 @@ func main() {
 
 	doSum(c)
 	doPrimes(c)
+	doAverage(c)
 }

@@ -4,10 +4,12 @@ package calculator;
 
 import "sum.proto";
 import "primes.proto";
+import "average.proto";
 
 option go_package = "grpc-playground/calculator/proto";
 
 service CalculatorService {
   rpc Sum(SumRequest) returns (SumResponse);
   rpc Primes(PrimeRequest) returns (stream PrimeResponse);
+  rpc Average(stream AverageRequest) returns (AverageResponse);
 }

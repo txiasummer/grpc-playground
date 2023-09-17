@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "grpc-playground/calculator/proto";
+
+message AverageRequest {
+  int32 x = 1;
+}
+
+message AverageResponse {
+  double result = 1;
+}
